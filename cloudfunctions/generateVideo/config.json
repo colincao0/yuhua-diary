@@ -1,0 +1,9 @@
+{
+  "timeout": 60,
+  "envVariables": {
+    "JIMENG_ACCESS_KEY": "your_jimeng_access_key_here",
+    "JIMENG_SECRET_KEY": "your_jimeng_secret_key_here"
+  },
+  "runtime": "Nodejs16.13",
+  "memorySize": 512
+}
