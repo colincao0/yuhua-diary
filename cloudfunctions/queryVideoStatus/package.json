@@ -1,0 +1,10 @@
+{
+  "name": "queryVideoStatus",
+  "version": "1.0.0",
+  "description": "查询视频生成状态云函数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "axios": "^0.27.2"
+  }
+}

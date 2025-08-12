@@ -1,0 +1,10 @@
+{
+  "name": "generateImages",
+  "version": "1.0.0",
+  "description": "生成图片云函数",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "axios": "^0.27.2"
+  }
+}
