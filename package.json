@@ -1,0 +1,81 @@
+{
+  "name": "yuhua-diary",
+  "version": "1.0.0",
+  "description": "语画日记 - 语音图文日记本微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "npm run compile",
+    "build": "npm run compile",
+    "compile": "echo 'WeChat Mini Program - No compilation needed'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linting configured'",
+    "deploy": "node ./scripts/deploy.js"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "diary",
+    "voice",
+    "image",
+    "云开发"
+  ],
+  "author": "语画日记开发团队",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colincao0/yuhua-diary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/colincao0/yuhua-diary/issues"
+  },
+  "homepage": "https://github.com/colincao0/yuhua-diary#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/wechat-miniprogram": "^3.4.0",
+    "miniprogram-ci": "^2.1.14"
+  },
+  "miniprogram": {
+    "cloudfunctionRoot": "cloudfunctions/",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "enhance": true,
+      "postcss": true,
+      "preloadBackgroundData": false,
+      "minified": true,
+      "newFeature": false,
+      "coverView": true,
+      "nodeModules": false,
+      "autoAudits": false,
+      "showShadowRootInWxmlPanel": true,
+      "scopeDataCheck": false,
+      "uglifyFileName": false,
+      "checkInvalidKey": true,
+      "checkSiteMap": true,
+      "uploadWithSourceMap": true,
+      "compileHotReLoad": false,
+      "lazyloadPlaceholderEnable": false,
+      "useMultiFrameRuntime": true,
+      "useApiHook": true,
+      "useApiHostProcess": true,
+      "babelSetting": {
+        "ignore": [],
+        "disablePlugins": [],
+        "outputPath": ""
+      },
+      "enableEngineNative": false,
+      "useIsolateContext": true,
+      "userConfirmedBundleSwitch": false,
+      "packNpmManually": false,
+      "packNpmRelationList": [],
+      "minifyWXSS": true,
+      "disableUseStrict": false,
+      "minifyWXML": true
+    }
+  },
+  "dependencies": {
+    "@volcengine/openapi": "^1.30.2"
+  }
+}
