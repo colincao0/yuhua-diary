@@ -60,14 +60,14 @@ exports.main = async (event, context) => {
     
     console.log('=== 即梦AI视频生成服务配置 ===')
     
-    // 从环境变量获取即梦AI密钥 - 请在云函数环境变量中配置
-    const ACCESS_KEY = process.env.JIMENG_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE'
-    const SECRET_KEY = process.env.JIMENG_SECRET_KEY || 'YOUR_SECRET_KEY_HERE'
+    // 使用环境变量配置即梦AI密钥
+    const ACCESS_KEY = process.env.JIMENG_ACCESS_KEY || 'your_access_key_here'
+    const SECRET_KEY = process.env.JIMENG_SECRET_KEY || 'your_secret_key_here'
     
     console.log('即梦AI Access Key:', ACCESS_KEY ? 'API Key已配置' : '未配置')
     console.log('即梦AI Secret Key:', SECRET_KEY ? 'Secret Key已配置' : '未配置')
     
-    if (!ACCESS_KEY || !SECRET_KEY || ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE' || SECRET_KEY === 'YOUR_SECRET_KEY_HERE') {
+    if (!ACCESS_KEY || !SECRET_KEY) {
       console.error('即梦AI API密钥未配置')
       throw new Error('服务配置错误：即梦AI API密钥未配置，请联系管理员')
     }
