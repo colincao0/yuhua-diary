@@ -2,7 +2,6 @@
  * queryVideoStatus 云函数 - 即梦AI版本
  * 用于查询视频生成任务状态
  * 支持即梦AI和火山方舟两种服务类型的自动识别
- * 小白提示：这个云函数负责检查视频生成的进度和结果
  */
 
 const cloud = require('wx-server-sdk')
@@ -16,9 +15,9 @@ cloud.init({
 
 const db = cloud.database()
 
-// 即梦AI API配置 - 从环境变量获取
-const ACCESS_KEY = process.env.JIMENG_ACCESS_KEY || 'YOUR_JIMENG_ACCESS_KEY_HERE'
-const SECRET_KEY = process.env.JIMENG_SECRET_KEY || 'YOUR_JIMENG_SECRET_KEY_HERE'
+// 即梦AI API配置
+const ACCESS_KEY = process.env.JIMENG_ACCESS_KEY || 'your_access_key_here'
+const SECRET_KEY = process.env.JIMENG_SECRET_KEY || 'your_secret_key_here'
 const SERVICE_HOST = 'visual.volcengineapi.com'
 const SERVICE_NAME = 'cv'
 const API_VERSION = '2022-08-31'
@@ -28,7 +27,6 @@ const REGION = 'cn-north-1'
  * 即梦AI请求签名算法
  * @param {Object} options 签名参数
  * @returns {Object} 请求头
- * 小白提示：这个函数生成访问即梦AI服务所需的安全签名
  */
 function signJimengRequest(options) {
   const {
@@ -100,7 +98,6 @@ function signJimengRequest(options) {
  * 查询即梦AI视频生成状态
  * @param {string} taskId 任务ID
  * @returns {Object} 查询结果
- * 小白提示：向即梦AI服务查询视频生成的当前状态
  */
 async function queryJimengVideoStatus(taskId) {
   console.log(`[即梦AI] 开始查询任务状态: ${taskId}`)
@@ -187,7 +184,6 @@ async function queryJimengVideoStatus(taskId) {
  * 查询火山方舟视频生成状态（兼容性支持）
  * @param {string} taskId 任务ID
  * @returns {Object} 查询结果
- * 小白提示：这个函数用于兼容火山方舟服务，目前暂不支持
  */
 async function queryArkVideoStatus(taskId) {
   console.log(`[火山方舟] 开始查询任务状态: ${taskId}`)
@@ -217,7 +213,6 @@ async function queryArkVideoStatus(taskId) {
  * @param {Object} event 事件参数
  * @param {Object} context 上下文
  * @returns {Object} 查询结果
- * 小白提示：这是云函数的主要入口，处理视频状态查询请求
  */
 exports.main = async (event, context) => {
   console.log('=== queryVideoStatus 云函数开始执行 ===')
